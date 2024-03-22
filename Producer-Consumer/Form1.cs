@@ -24,8 +24,9 @@ namespace Producer_Consumer
 
         public async void main()
         {
-            Consumer consumer = new Consumer();
-            Producer producer = new Producer();
+            Consumer consumer;
+            Producer producer; 
+
             int moves, i;
 
             do
@@ -38,31 +39,40 @@ namespace Producer_Consumer
                     consumer = container.GetConsumer();
                     producer = container.GetProducer();
 
+                    //Turno consumidor
                     if (container.GetCurrentTurn() == Constants.CONSUMER_TURN)
                     {
+         
+                        //Si el consumidor consume...
                         if (consumer.getState() == Constants.WORKING)
                         {
+                            //Se van eliminando los elementos del buffer
                             if (container.setAction(consumer.getCurrentPos(), consumer.Consume()))
                             {
                                 SetImage(consumer.getCurrentPos(), Constants.CONSUMER_TURN);
                                 consumer = container.GetConsumer();
                                 consumer.setCurrentPos(consumer.getCurrentPos() + 1);
                             }
+
+                            //Si llega al final del buffer, regresa al inicio
                             if (consumer.getCurrentPos() == Constants.CONTAINER_SIZE)
                             {
                                 consumer.setCurrentPos(0);
                             }
                         }
+
                         if (consumer.getState() == Constants.TRYING)
                         {
                             ChangeStateLabel(consumer.getState(), producer.getState());
                             break;
                         }
                     }
-                    else
+                    else //Turno productor
                     {
+                        //Si el productor produce...
                         if (producer.getState() == Constants.WORKING)
                         {
+                            //Se van agregando los elementos al buffer
                             if (container.setAction(producer.getCurrentPos(), producer.Produce()))
                             {
                                 SetImage(producer.getCurrentPos(), Constants.PRODUCER_TURN);
@@ -80,6 +90,7 @@ namespace Producer_Consumer
                             break;
                         }
                     }
+
                     ChangeStateLabel(consumer.getState(), producer.getState());
                     Update();
                 }
@@ -94,6 +105,7 @@ namespace Producer_Consumer
             Bitmap bmp = new Bitmap("..\\..\\chivas.png");
             PictureBox pb = new PictureBox();
 
+            //Determinar la posicion de la imagen que se cambiara
             switch (index)
             {
                 case 0: pb = pictureBox1; break;
@@ -116,13 +128,20 @@ namespace Producer_Consumer
                 case 17: pb = pictureBox18; break;
                 case 18: pb = pictureBox19; break;
                 case 19: pb = pictureBox20; break;
+                case 20: pb = pictureBox21; break;
+                case 21: pb = pictureBox22; break;
+                case 22: pb = pictureBox23; break;
+                case 23: pb = pictureBox24; break;
+                case 24: pb = pictureBox24; break;
             }
 
+            //Se agrega o quita la imagen dependiendo del turno
             if (turn == Constants.PRODUCER_TURN)
             {
                 pb.Image = bmp;
             }
-            else
+            
+            if(turn == Constants.CONSUMER_TURN)
             {
                 if (pb.Image != null)
                 {
@@ -135,9 +154,9 @@ namespace Producer_Consumer
          * Funcion para cambiar el label del productor o consumidor
          * en base a la accion que esten realizando
         */
-        public void ChangeStateLabel(int c, int p)
+        public void ChangeStateLabel(int consumer, int producer)
         {
-            switch (p)
+            switch (producer)
             {
                 case Constants.WORKING:
                     producerState.Text = "TRABAJANDO";
@@ -155,7 +174,7 @@ namespace Producer_Consumer
                     producerState.Refresh();
                     break;
             }
-            switch (c)
+            switch (consumer)
             {
                 case Constants.WORKING:
                     consumerState.Text = "TRABAJANDO";

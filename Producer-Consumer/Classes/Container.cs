@@ -8,7 +8,7 @@ namespace Producer_Consumer.Classes
 { 
     static class Constants
     {
-        public const int CONTAINER_SIZE = 20;
+        public const int CONTAINER_SIZE = 25;
         public const int SLEEPING = 0;
         public const int WORKING = 1;
         public const int TRYING = 2;
@@ -36,12 +36,13 @@ namespace Producer_Consumer.Classes
             amount = new Random();
             
             //Dejar el buffer vacio
-            for(int i = 0; i < buffer.Length; i++)
+            for(int i = 0; i < Constants.CONTAINER_SIZE; i++)
             {
                 buffer[i] = false;
             }   
         }
 
+        //Cambiar el estatus del buffer
         public bool setAction(int pos, bool action)
         {
             if (action == buffer[pos])
@@ -61,13 +62,15 @@ namespace Producer_Consumer.Classes
         }
 
 
+        //Funcion para calcular el numero de movimiento
         public int NextMoves()
         {
-            int p, a;
-            p = randomTurn.Next() % 100;
-            a = amount.Next(3, 7);
+            int turn, a;
 
-            if (p % 2 == 0)
+            turn = randomTurn.Next() % 100; //Numero aleatorio para determinar el turno
+            a = amount.Next(4, 7); //Cantidad de movimientos que se haran
+
+            if (turn % 2 == 0)
             {
                 currentTurn = Constants.PRODUCER_TURN;
             }
@@ -76,6 +79,7 @@ namespace Producer_Consumer.Classes
                 currentTurn = Constants.CONSUMER_TURN;
             }
 
+            //Turno del productor
             if (currentTurn == Constants.PRODUCER_TURN)
             {
                 if (ProductsCount() != Constants.CONTAINER_SIZE)
@@ -89,7 +93,7 @@ namespace Producer_Consumer.Classes
                     consumer.setState(Constants.SLEEPING);
                 }
             }
-            else //CONSUMER TURN
+            else //Turno del consumidor
             {
                 if (ProductsCount() > 0)
                 {
