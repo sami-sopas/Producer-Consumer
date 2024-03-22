@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Producer_Consumer
+namespace Producer_Consumer.Classes
 {
     class Consumer
     {
@@ -19,6 +19,26 @@ namespace Producer_Consumer
         public bool Consume()
         {
             return false;
+        }
+
+        public void setState(int value)
+        {
+            state = value;
+        }
+
+        public int getState()
+        {
+            return state;
+        }
+
+        public void setCurrentPos(int value)
+        {
+            currentPos = value;
+        }
+
+        public int getCurrentPos()
+        {
+            return currentPos;
         }
 
     }
