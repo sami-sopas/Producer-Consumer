@@ -1,0 +1,10 @@
+C:\Users\ramir\source\repos\Producer-Consumer\Producer-Consumer\bin\Debug\Producer-Consumer.exe.config
+C:\Users\ramir\source\repos\Producer-Consumer\Producer-Consumer\bin\Debug\Producer-Consumer.exe
+C:\Users\ramir\source\repos\Producer-Consumer\Producer-Consumer\bin\Debug\Producer-Consumer.pdb
+C:\Users\ramir\source\repos\Producer-Consumer\Producer-Consumer\obj\Debug\Producer-Consumer.csproj.AssemblyReference.cache
+C:\Users\ramir\source\repos\Producer-Consumer\Producer-Consumer\obj\Debug\Producer_Consumer.Form1.resources
+C:\Users\ramir\source\repos\Producer-Consumer\Producer-Consumer\obj\Debug\Producer_Consumer.Properties.Resources.resources
+C:\Users\ramir\source\repos\Producer-Consumer\Producer-Consumer\obj\Debug\Producer-Consumer.csproj.GenerateResource.cache
+C:\Users\ramir\source\repos\Producer-Consumer\Producer-Consumer\obj\Debug\Producer-Consumer.csproj.CoreCompileInputs.cache
+C:\Users\ramir\source\repos\Producer-Consumer\Producer-Consumer\obj\Debug\Producer-Consumer.exe
+C:\Users\ramir\source\repos\Producer-Consumer\Producer-Consumer\obj\Debug\Producer-Consumer.pdb
