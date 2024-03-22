@@ -64,7 +64,7 @@ namespace Producer_Consumer.Classes
         public int NextMoves()
         {
             int p, a;
-            p = turnRandom.Next() % 100;
+            p = randomTurn.Next() % 100;
             a = amount.Next(3, 7);
 
             if (p % 2 == 0)
