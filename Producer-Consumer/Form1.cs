@@ -20,6 +20,7 @@ namespace Producer_Consumer
         {
             container = new Container();
             InitializeComponent();
+            this.KeyDown += Form1_KeyDown;
         }
 
         public async void main()
@@ -200,5 +201,20 @@ namespace Producer_Consumer
             startButton.Enabled = false;
             startButton.Visible = false;
         }
+
+        //Para cerrar el programa con Esc
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verificar si la tecla presionada es la tecla "Esc"
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Mostrar un mensaje de advertencia
+                MessageBox.Show("Programa finalizado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // Cerrar la ventana
+                this.Close();
+            }
+        }
+
     }
 }
