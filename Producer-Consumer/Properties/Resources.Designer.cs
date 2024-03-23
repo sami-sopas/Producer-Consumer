@@ -63,9 +63,9 @@ namespace Producer_Consumer.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ojon {
+        internal static System.Drawing.Bitmap chilemorron {
             get {
-                object obj = ResourceManager.GetObject("ojon", resourceCulture);
+                object obj = ResourceManager.GetObject("chilemorron", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -103,7 +103,7 @@ namespace Producer_Consumer
         */  
         public void SetImage(int index, int turn)
         {
-            Bitmap bmp = new Bitmap("..\\..\\chivas.png");
+            Bitmap bmp = new Bitmap("..\\..\\cupcake.png");
             PictureBox pb = new PictureBox();
 
             //Determinar la posicion de la imagen que se cambiara
