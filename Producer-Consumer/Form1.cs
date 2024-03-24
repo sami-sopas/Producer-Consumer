@@ -133,7 +133,7 @@ namespace Producer_Consumer
                 case 21: pb = pictureBox22; break;
                 case 22: pb = pictureBox23; break;
                 case 23: pb = pictureBox24; break;
-                case 24: pb = pictureBox24; break;
+                case 24: pb = pictureBox25; break;
             }
 
             //Se agrega o quita la imagen dependiendo del turno
@@ -161,17 +161,20 @@ namespace Producer_Consumer
             {
                 case Constants.WORKING:
                     producerState.Text = "TRABAJANDO";
-                    producerState.BackColor = Color.Green;
+                    producerState.BackColor = Color.FromArgb(192, 255, 192);
+                    producerState.ForeColor = Color.Green;
                     producerState.Refresh();
                     break;
                 case Constants.TRYING:
-                    producerState.Text = "INTENTANDO TRABAJAR";
-                    producerState.BackColor = Color.Orange;
+                    producerState.Text = "INTENTANDO TRABAJAR".Replace(" ", Environment.NewLine);
+                    producerState.BackColor = Color.FromArgb(255, 255, 192);
+                    producerState.ForeColor = Color.Orange;
                     producerState.Refresh();
                     break;
                 default:
                     producerState.Text = "DURMIENDO";
-                    producerState.BackColor = Color.Red;
+                    producerState.BackColor = Color.FromArgb(255, 192, 192);
+                    producerState.ForeColor = Color.Red;
                     producerState.Refresh();
                     break;
             }
@@ -179,17 +182,20 @@ namespace Producer_Consumer
             {
                 case Constants.WORKING:
                     consumerState.Text = "TRABAJANDO";
-                    consumerState.BackColor = Color.Green;
+                    consumerState.BackColor = Color.FromArgb(192, 255, 192);
+                    consumerState.ForeColor = Color.Green;
                     consumerState.Refresh();
                     break;
                 case Constants.TRYING:
-                    consumerState.Text = "INTENTANDO TRABAJAR";
-                    consumerState.BackColor = Color.Orange;
+                    consumerState.Text = "INTENTANDO TRABAJAR".Replace(" ", Environment.NewLine);
+                    consumerState.BackColor = Color.FromArgb(255, 255, 192);
+                    consumerState.ForeColor = Color.Orange;
                     producerState.Refresh();
                     break;
                 default:
                     consumerState.Text = "DURMIENDO";
-                    consumerState.BackColor = Color.Red;
+                    consumerState.BackColor = Color.FromArgb(255, 192, 192);
+                    consumerState.ForeColor = Color.Red;
                     consumerState.Refresh();
                     break;
             }
@@ -198,8 +204,16 @@ namespace Producer_Consumer
         private void startButton_Click(object sender, EventArgs e)
         {
             main();
+            //Esconder boton cuando se de a empezar
             startButton.Enabled = false;
             startButton.Visible = false;
+
+            //Inicializar labels vacios
+            producerState.Visible = true;
+            producerState.Text = String.Empty;
+            consumerState.Visible = true;
+            consumerState.Text = String.Empty;
+
         }
 
         //Para cerrar el programa con Esc

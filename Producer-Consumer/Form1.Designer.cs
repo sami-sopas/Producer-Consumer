@@ -34,6 +34,7 @@
             this.producerState = new System.Windows.Forms.Label();
             this.consumerState = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
@@ -59,7 +60,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
@@ -85,14 +87,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.SuspendLayout();
             // 
             // producerLabel
             // 
             this.producerLabel.AutoSize = true;
             this.producerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.producerLabel.Location = new System.Drawing.Point(63, 48);
+            this.producerLabel.Location = new System.Drawing.Point(75, 48);
             this.producerLabel.Name = "producerLabel";
             this.producerLabel.Size = new System.Drawing.Size(146, 32);
             this.producerLabel.TabIndex = 0;
@@ -112,32 +114,43 @@
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(1163, 685);
+            this.startButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startButton.Location = new System.Drawing.Point(626, 11);
             this.startButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(75, 23);
+            this.startButton.Padding = new System.Windows.Forms.Padding(3);
+            this.startButton.Size = new System.Drawing.Size(93, 35);
             this.startButton.TabIndex = 2;
-            this.startButton.Text = "empezar";
-            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Text = "Comenzar";
+            this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // producerState
             // 
             this.producerState.AutoSize = true;
-            this.producerState.Location = new System.Drawing.Point(102, 446);
+            this.producerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.producerState.Location = new System.Drawing.Point(65, 433);
             this.producerState.Name = "producerState";
-            this.producerState.Size = new System.Drawing.Size(44, 16);
+            this.producerState.Padding = new System.Windows.Forms.Padding(10);
+            this.producerState.Size = new System.Drawing.Size(158, 42);
             this.producerState.TabIndex = 3;
-            this.producerState.Text = "label1";
+            this.producerState.Text = "producerLabel";
+            this.producerState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.producerState.Visible = false;
             // 
             // consumerState
             // 
             this.consumerState.AutoSize = true;
-            this.consumerState.Location = new System.Drawing.Point(1220, 425);
+            this.consumerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consumerState.Location = new System.Drawing.Point(1138, 433);
             this.consumerState.Name = "consumerState";
-            this.consumerState.Size = new System.Drawing.Size(44, 16);
+            this.consumerState.Padding = new System.Windows.Forms.Padding(10);
+            this.consumerState.Size = new System.Drawing.Size(165, 42);
             this.consumerState.TabIndex = 4;
-            this.consumerState.Text = "label1";
+            this.consumerState.Text = "consumerLabel";
+            this.consumerState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.consumerState.Visible = false;
             // 
             // label1
             // 
@@ -146,6 +159,16 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 31;
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.Image = global::Producer_Consumer.Properties.Resources.consumidor;
+            this.pictureBox26.Location = new System.Drawing.Point(1041, 31);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(338, 327);
+            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox26.TabIndex = 32;
+            this.pictureBox26.TabStop = false;
             // 
             // pictureBox25
             // 
@@ -422,15 +445,15 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox26
+            // pictureBox27
             // 
-            this.pictureBox26.Image = global::Producer_Consumer.Properties.Resources.chilemorron;
-            this.pictureBox26.Location = new System.Drawing.Point(1036, 24);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(353, 343);
-            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox26.TabIndex = 32;
-            this.pictureBox26.TabStop = false;
+            this.pictureBox27.Image = global::Producer_Consumer.Properties.Resources.productor;
+            this.pictureBox27.Location = new System.Drawing.Point(-4, 125);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Size = new System.Drawing.Size(321, 191);
+            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox27.TabIndex = 33;
+            this.pictureBox27.TabStop = false;
             // 
             // Form1
             // 
@@ -469,10 +492,12 @@
             this.Controls.Add(this.producerState);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.producerLabel);
+            this.Controls.Add(this.pictureBox27);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
@@ -498,7 +523,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,6 +563,7 @@
         private System.Windows.Forms.PictureBox pictureBox25;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox26;
+        private System.Windows.Forms.PictureBox pictureBox27;
     }
 }
 
